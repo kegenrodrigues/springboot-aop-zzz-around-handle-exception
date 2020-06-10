@@ -21,5 +21,16 @@ public class TrafficFortuneService {
 		
 		return "Today there will be less traffic due to quarantine.";
 	}
+
+	public String getFortune(boolean tripwire) {
+		if(tripwire) {
+			
+			throw new RuntimeException("Major Accident!!!!");
+			
+		}
+		return getFortune();
+	}
+	
+	
 	
 }

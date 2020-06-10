@@ -31,7 +31,14 @@ public class MyDemoLoggingAspect {
 		
 		long before = System.currentTimeMillis();
 		
-		Object result = theProceedingJoinPoint.proceed();
+		Object result = null;
+		try {
+		result = theProceedingJoinPoint.proceed();
+		}catch(Exception exc) {
+			System.out.println("A small accident dont worry");
+			result = "Nothing to worry";
+			//throw exc;
+		}
 		
 		long after = System.currentTimeMillis();
 		
